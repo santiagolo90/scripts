@@ -1,0 +1,53 @@
+#!/bin/bash
+distro="$(lsb_release -is)"
+echo "se va actualizar " $distro
+#if [ "$distro" = "Fedora" ]; then
+#    sudo dnf update -y
+#elif [ "$distro" = "Ubuntu" ]; then
+#    sudo apt update && sudo apt dist-upgrade -y
+#    sudo snap refresh
+#fi
+
+case $distro in
+
+  Ubuntu | Debian)
+    sudo apt update && sudo apt dist-upgrade -y
+    sudo snap refresh
+    ;;
+
+  Fedora | CentOS)
+    sudo dnf update -y
+    ;;
+esac
+
+flatpak update -y
+
+cat << "EOF"
+     ,---.
+   ,.'-.   \
+  ( ( ,'"""""-.
+  `,X          `.
+  /` `           `._
+ (            ,   ,_\
+ |          ,---.,'o `.
+ |         / o   \     )
+  \ ,.    (      .____,
+   \| \    \____,'     \
+ '`'\  \        _,____,'
+ \  ,--      ,-'     \
+   ( C     ,'         \
+    `--'  .'           |
+      |   |         .O |
+    __|    \        ,-'_
+   / `L     `._  _,'  ' `.
+  /    `--.._  `',.   _\  `
+  `-.       /\  | `. ( ,\  \
+ _/  `-._  /  \ |--'  (     \
+'  `-.   `'    \/\`.   `.    )
+      \           \ `.  |    |   
+EOF
+
+echo "presione una tecla cualquiera"
+read && kill -9 $PPID
+
+

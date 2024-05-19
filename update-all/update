@@ -1,0 +1,33 @@
+#!/bin/bash
+sudo apt update && sudo apt dist-upgrade -y
+flatpak update -y
+sudo snap refresh
+cat << "EOF"
+     ,---.
+   ,.'-.   \
+  ( ( ,'"""""-.
+  `,X          `.
+  /` `           `._
+ (            ,   ,_\
+ |          ,---.,'o `.
+ |         / o   \     )
+  \ ,.    (      .____,
+   \| \    \____,'     \
+ '`'\  \        _,____,'
+ \  ,--      ,-'     \
+   ( C     ,'         \
+    `--'  .'           |
+      |   |         .O |
+    __|    \        ,-'_
+   / `L     `._  _,'  ' `.
+  /    `--.._  `',.   _\  `
+  `-.       /\  | `. ( ,\  \
+ _/  `-._  /  \ |--'  (     \
+'  `-.   `'    \/\`.   `.    )
+      \           \ `.  |    |   
+EOF
+
+echo "presione una tecla cualquiera"
+read
+
+
